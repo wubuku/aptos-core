@@ -31,6 +31,15 @@ module hello_table::order_item_state_dao {
         *table::borrow(&tables.order_item_state_table, order_item_id)
     }
 
+    // public fun borrow_mut(order_id: &vector<u8>, product_id: &vector<u8>): &mut OrderItemStatePO acquires Tables {
+    //     let order_item_id = order::new_order_item_id(*order_id, *product_id);
+    //     let tables = borrow_global_mut<Tables>(@hello_table);
+    //     table::borrow_mut(&mut tables.order_item_state_table, order_item_id)
+    //     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    //     //|
+    //     //Invalid return. Resource variable 'Tables' is still being borrowed.
+    // }
+
     // public fun order_items_borrow_mut(
     //     s: &mut OrderState,
     //     product_id: &vector<u8>
